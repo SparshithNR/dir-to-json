@@ -12,5 +12,11 @@
     "fixturify": "^1.2.0",
     "mocha": "^6.2.1",
     "rimraf": "^3.0.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2"
+  },
+  "bin": {
+    "dirtojson": "bin/dirtojson.js"
   }
 }
