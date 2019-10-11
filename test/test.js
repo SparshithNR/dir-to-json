@@ -1,4 +1,4 @@
-const expect = require("chai").expect;
+const expect = require('chai').expect;
 const fixturify = require('fixturify');
 const dirToJson = require('../index');
 const rm = require('rimraf').sync;

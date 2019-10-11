@@ -5,7 +5,7 @@ const [,, ...args] = process.argv;
 const dirtojson = require('../index');
 const chalk = require('chalk');
 if (args.length > 1) {
-  console.log(chalk.red(`Invalid usage. Please use dirtojson [path]`));
+  console.error(chalk.red(`Invalid usage. Please use dirtojson [path]`));
   return;
 }
 
