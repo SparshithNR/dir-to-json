@@ -1,0 +1,16 @@
+{
+  "name": "dir-to-json",
+  "version": "1.0.0",
+  "description": "Converts directory structure in the path to json format. filename/directory name as key and content of file as value",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "fixturify": "^1.2.0",
+    "mocha": "^6.2.1",
+    "rimraf": "^3.0.0"
+  }
+}
