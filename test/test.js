@@ -2,6 +2,7 @@ const expect = require('chai').expect;
 const fixturify = require('fixturify');
 const dirToJson = require('../index');
 const rm = require('rimraf').sync;
+const path = require('path');
 
 describe('dir-to-json', function () {
   let directory = {
@@ -61,7 +62,7 @@ describe('dir-to-json', function () {
     });
   });
   it(`Throws error if directory doesn't exist`, function () {
-    let dirPath = 'fixtures/test-4';
+    let dirPath = path.normalize('fixtures/test-4');
     expect(() => { dirToJson(dirPath) }).to.throws(`Path ${dirPath} doesn't exist`);
   });
   it(`Throws access error`, function () {
