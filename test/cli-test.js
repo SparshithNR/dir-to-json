@@ -2,6 +2,7 @@ const expect = require('chai').expect;
 const { exec } = require('child_process');
 const fixturify = require('fixturify');
 const rm = require('rimraf').sync;
+const path = require('path');
 
 describe('CLI test', function () {
   let directory = {
@@ -17,7 +18,8 @@ describe('CLI test', function () {
   });
 
   it(`thows error about invalid command`, function (done) {
-    exec(`./bin/dirtojson.js asda asdas`, (err, stdout, stderr) => {
+    let commandPath = path.normalize('./bin/dirtojson.js');
+    exec(`${commandPath} asda asdas`, (err, stdout, stderr) => {
       if (stderr) {
         expect(stderr).to.be.equal('Invalid usage. Please use dirtojson [path]\n');
       }
@@ -26,7 +28,8 @@ describe('CLI test', function () {
   });
 
   it(`returns the json result`, function (done) {
-    exec(`./bin/dirtojson.js fixtures`, (err, stdout) => {
+    let commandPath = path.normalize('./bin/dirtojson.js');
+    exec(`${commandPath} fixtures`, (err, stdout) => {
       expect(JSON.parse(stdout)).to.deep.equal(directory);
       done();
     })
